@@ -1,7 +1,6 @@
 package ScreenCaptureSoft.Utils;
 
 
-import com.sun.glass.ui.Size;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -24,7 +23,7 @@ public class Diplomatic {
     /**
      * 工程中图片的相对路径
      */
-    public static String ARTIFACT_PHOTO_PATH = "src/main/java/ScreenCaptureSoft/Photo";
+    public static String ARTIFACT_PHOTO_PATH = "./Photo";
 
     /**
      * 按钮上的图片默认大小

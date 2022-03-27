@@ -6,7 +6,7 @@ import ScreenCaptureSoft.JavaSwingListener.ScreenShotListener;
 import ScreenCaptureSoft.Utils.ButtonInfo;
 import ScreenCaptureSoft.Utils.Diplomatic;
 import ScreenCaptureSoft.Utils.MyMouseListener;
-import com.sun.glass.ui.Size;
+import ScreenCaptureSoft.Utils.Size;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ import java.io.File;
 
 public class SoftBody extends JFrame {
 
-    private int x = 1500;
+    private int x = Toolkit.getDefaultToolkit().getScreenSize().width - 300;
     private int y = 20;
     public static int winInitWidth = 80;
     public static int winInitHeight = 600;
@@ -52,7 +52,7 @@ public class SoftBody extends JFrame {
         screenShot();
         fullScreenShot();
 
-        rootContainer.revalidate();
+//        rootContainer.revalidate();
     }
 
     /**
@@ -112,6 +112,7 @@ public class SoftBody extends JFrame {
      */
     void screenShot() {
         ImageIcon icon = new ImageIcon(Diplomatic.ARTIFACT_PHOTO_PATH + File.separator + "screenShot.png");
+
         FunctionJButton functionJButton = new FunctionJButton(lastFuncButtonInfo);
         JButton jButton = functionJButton.createFunctionJButton("", "指定截图", icon, rootContainer);
         jButton.addMouseListener(new ScreenShotListener() {
@@ -154,9 +155,8 @@ public class SoftBody extends JFrame {
         lastFuncButtonInfo = buttonInfo;
     }
 
-    public static ButtonInfo getLastFuncButtonInfo() {
-        return lastFuncButtonInfo;
+
+    public Container getRootContainer(){
+        return rootContainer;
     }
-
-
 }

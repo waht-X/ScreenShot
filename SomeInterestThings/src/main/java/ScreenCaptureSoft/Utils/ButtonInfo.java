@@ -1,7 +1,6 @@
 package ScreenCaptureSoft.Utils;
 
 import ScreenCaptureSoft.SoftBody.SoftBody;
-import com.sun.glass.ui.Size;
 
 import java.awt.*;
 
